@@ -27,22 +27,28 @@ def validate_levels(input_value):
     except ValueError:
         raise ValueError("Invalid input. Please enter a valid number between 3 and 1000.")
 
-while True:
-    try:
-        levels = validate_levels(input("Enter the number of levels for the Christmas tree (3-1000): "))
-        break
-    except ValueError as e:
-        print(e)
+def main():
 
-while True:
-    filepath = input("Enter the path to the output file (e.g., /path/to/your/file.txt): ")
-    try:
-        with open(filepath, 'w') as file:
-            tree = generate_tree(levels)
-            file.write(tree)
-        print(f"Tree with {levels} levels created and saved to {filepath}")
-        break
-    except Exception as e:
-        print(f"An error occurred while trying to write to the file: {e}")
-        print("Please make sure the path is correct.")
-        print(r"Example of a valid file path: C:\\Users\\YourName\\Desktop\\file_name.txt (Windows) or /home/yourname/file_name.txt (Linux/Mac)")
+    while True:
+        try:
+            levels = validate_levels(input("Enter the number of levels for the Christmas tree (3-1000): "))
+            break
+        except ValueError as e:
+            print(e)
+
+    while True:
+        filepath = input("Enter the path to the output file (e.g., /path/to/your/file.txt): ")
+        try:
+            with open(filepath, 'w') as file:
+                tree = generate_tree(levels)
+                file.write(tree)
+            print(f"Tree with {levels} levels created and saved to {filepath}")
+            break
+
+        except Exception as e:
+            print(f"An error occurred while trying to write to the file: {e}")
+            print("Please make sure the path is correct.")
+            print(r"Example of a valid file path: C:\\Users\\YourName\\Desktop\\file_name.txt (Windows) or /home/yourname/file_name.txt (Linux/Mac)")
+
+if __name__ == '__main__':
+    main()
