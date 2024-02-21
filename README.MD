@@ -14,10 +14,6 @@ This simple Python script allows you to generate a fir tree pattern and save it 
 - **Input Validation:** The input for the number of levels is validated to ensure it falls within the allowed range.
 - **File Output:** The generated tree is saved to a specified file.
 
-## Acceptance Tests
-
-A set of acceptance tests is provided to ensure the script's proper functionality. These tests cover valid and invalid inputs, as well as file path validations.
-
 ## How to Run Tests
 
 1. Open a terminal or command prompt.
